@@ -78,8 +78,6 @@ public class Exercise1 {
         String defaultStringMask = getStringDefaultMask(toTransform);
 
 
-            //Integer first = toTransform.get(5);
-            //Integer second = toTransform.get(7);
             List<Integer> keys = new LinkedList<>();
 
             for(Integer i : toTransform.values()){
@@ -103,18 +101,15 @@ public class Exercise1 {
                         mapping.put(counter, current);
                     }
                 counter++;
-
                 i++;
 
             }
-        System.out.println(mapping);
         printResult(mapping, toTransform, inputArray);
 
         return 0;
     }
 
     public void printResult(Map<Integer, String> mapping, Map<Integer,Integer> toTransform, String[] inputArray){
-        System.out.println(mapping + "  " + toTransform + " "  + inputArray);
         for(String map : mapping.values() ){
             String[] mapArray = splitInput(map);
             int mappingIndex = 0;

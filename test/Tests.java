@@ -85,66 +85,7 @@ public class Tests {
         defaultMask.add(2);
         Assert.assertEquals(exercise1.maskIsValid(defaultMask), false);
     }
-      /*
-    @Test
-    public void testIncrementMask(){
-        List<Integer> defaultMask = new LinkedList<>();
-        defaultMask.add(0);
-        defaultMask.add(0);
-        defaultMask.add(2);
-        List<Integer> afterFirsIncrement = new LinkedList<>();
-        afterFirsIncrement.add(0);
-        afterFirsIncrement.add(1);
-        afterFirsIncrement.add(0);
-        exercise1.incrementMask(defaultMask);
-        Assert.assertEquals(defaultMask, afterFirsIncrement);
-    }
-    @Test
-    public void testIncrementMediumMask(){
-        List<Integer> defaultMask = new LinkedList<>();
-        defaultMask.add(0);
-        defaultMask.add(2);
-        defaultMask.add(2);
-        defaultMask.add(2);
-        defaultMask.add(2);
-        List<Integer> afterFirsIncrement = new LinkedList<>();
-        afterFirsIncrement.add(1);
-        afterFirsIncrement.add(0);
-        afterFirsIncrement.add(0);
-        afterFirsIncrement.add(0);
-        afterFirsIncrement.add(0);
-        exercise1.incrementMask(defaultMask);
-        Assert.assertEquals(afterFirsIncrement, defaultMask);
-    }
 
-    @Test
-    public void testIncrementBigMask(){
-        List<Integer> defaultMask = new LinkedList<>();
-        defaultMask.add(2);
-        defaultMask.add(2);
-        defaultMask.add(2);
-        defaultMask.add(2);
-        defaultMask.add(2);
-        defaultMask.add(2);
-        defaultMask.add(2);
-        defaultMask.add(2);
-        defaultMask.add(0);
-        List<Integer> expectedResult = new LinkedList<>();
-        expectedResult.add(2);
-        expectedResult.add(2);
-        expectedResult.add(2);
-        expectedResult.add(2);
-        expectedResult.add(2);
-        expectedResult.add(2);
-        expectedResult.add(2);
-        expectedResult.add(2);
-        expectedResult.add(1);
-        exercise1.incrementMask(defaultMask);
-        Assert.assertEquals(expectedResult, defaultMask);
-
-
-    }
-           */
 
     @Test
     public void hexToBin(){
@@ -239,10 +180,11 @@ public class Tests {
     }
 
     @Test
-    public void testPrintResult(){
-        //Map<Integer, String> mapping = new Hash
-        //Map<Integer,Integer> toTransform, String[] inputArray
+    public void testBigInput(){
+         String[] args = new String[1];
+         args[0] = "987654321";
+         int result = exercise1.phoneNumber(args);
+         Assert.assertEquals(result, 0);
     }
-
 
 }
