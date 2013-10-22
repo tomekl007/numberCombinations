@@ -71,16 +71,26 @@ public class Exercise1 {
         Map<Integer,Integer> toTransform = transformArray(input[0]);
         String defaultStringMask = getStringDefaultMask(toTransform);
 
-        Integer first = toTransform.get(5);
-        Integer second = toTransform.get(7);
+        //Integer first = toTransform.get(5);
+        //Integer second = toTransform.get(7);
+        List<Integer> keys = new LinkedList<Integer>();
+
+        for(Integer i : toTransform.values()){
+            keys.add(i);
+        }
+
+        int numberOfKeys = keys.size();
         int i = 0;
         String mask = "";
         while(isMaskValid(defaultStringMask, mask)){
             mask = decToThrinity(String.valueOf(i));
             String correctMask = intersectMask(mask, defaultStringMask);
 
-            System.out.println(keyboard.get(first).get(getMaskValueForIndex(0,correctMask)));
-            System.out.println(keyboard.get(second).get(getMaskValueForIndex(1, correctMask)));
+
+                for (int j = 0; j < numberOfKeys; j++) {
+                    System.out.println(keyboard.get(keys.get(j)).get(getMaskValueForIndex(j,correctMask)));
+                }
+
 
             i++;
         }
