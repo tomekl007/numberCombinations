@@ -54,18 +54,12 @@ public class Tests {
         Assert.assertEquals(expectedOutput, result);
     }
 
-    @Test
-    public void testSimpleCase(){
-        String[] args = new String[1];
-        args[0] = "110015010";
-    }
 
     @Test
     public void hexToBin(){
-        for (int i = 0; i < 10; i++) {
-            System.out.println(exercise1.decToTrinary(String.valueOf(i)));
-        }
-        System.out.println("----> " + exercise1.decToTrinary(String.valueOf(21)));
+
+        String result = exercise1.decToTrinary(String.valueOf(3));
+        Assert.assertEquals(result, "10");
     }
 
     @Test
@@ -142,7 +136,7 @@ public class Tests {
     @Test
     public void testBigInput(){
          String[] args = new String[1];
-         args[0] = "987654321";
+         args[0] = "338356737";
          int result = exercise1.getAllNumberCombinations(args);
          Assert.assertEquals(result, 0);
     }
