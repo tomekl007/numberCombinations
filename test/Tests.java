@@ -2,7 +2,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -20,14 +19,14 @@ public class Tests {
     public void testBadImput(){
         String[] args = new String[1];
         args[0] = "bad input";
-        int result = exercise1.phoneNumber(args);
+        int result = exercise1.getAllNumberCombinations(args);
         Assert.assertEquals(result, -1);
     }
     @Test
     public void testCorrectInput(){
         String[] args = new String[1];
-        args[0] = "110015029";
-        int result = exercise1.phoneNumber(args);
+        args[0] = "110015010";
+        int result = exercise1.getAllNumberCombinations(args);
         Assert.assertEquals(result, 0);
     }
 
@@ -62,37 +61,11 @@ public class Tests {
     }
 
     @Test
-    public void createMask(){
-        Map<Integer, Integer> expectedOutput = new HashMap<>();
-        expectedOutput.put(1,2);
-        expectedOutput.put(8,5);
-        Assert.assertEquals(exercise1.getDefaultMask(expectedOutput).size(),2);
-
-    }
-
-    @Test
-    public void testIfMaskIsValid(){
-         List<Integer> defaultMask = new LinkedList<>();
-        defaultMask.add(1);
-        defaultMask.add(2);
-        Assert.assertEquals(exercise1.maskIsValid(defaultMask), true);
-    }
-    @Test
-    public void testMaskShouldBeNotValid(){
-        List<Integer> defaultMask = new LinkedList<>();
-        defaultMask.add(2);
-        defaultMask.add(2);
-        defaultMask.add(2);
-        Assert.assertEquals(exercise1.maskIsValid(defaultMask), false);
-    }
-
-
-    @Test
     public void hexToBin(){
         for (int i = 0; i < 10; i++) {
-            System.out.println(exercise1.decToThrinity(String.valueOf(i)));
+            System.out.println(exercise1.decToTrinary(String.valueOf(i)));
         }
-        System.out.println("----> " + exercise1.decToThrinity(String.valueOf(21)));
+        System.out.println("----> " + exercise1.decToTrinary(String.valueOf(21)));
     }
 
     @Test
@@ -117,25 +90,12 @@ public class Tests {
         String mask =  "2111221";
         Assert.assertEquals(exercise1.isStringMaskValid(mask), true);
     }
-                       /*
-    @Test
-    public void testIncrementStringMask(){
-        String mask = "22221120";
-        String expectedOutput = "22221121";
-        Assert.assertEquals(expectedOutput, exercise1.IncrementStringMask(mask));
-    }                    */
 
     @Test
     public void testMaskIsValid(){
         String mask = "22211";
         String defaultMask = "000000";
-
-
-
-
-
-
-       Assert.assertEquals(true, exercise1.isMaskValid(defaultMask, mask));
+        Assert.assertEquals(true, exercise1.isMaskValid(defaultMask, mask));
 
         String mask2 = "22122222";
         String defaultMask2 = "00000000";
@@ -146,7 +106,7 @@ public class Tests {
 
     @Test
     public void testMaskIsNotValid(){
-       String mask = "22222";
+        String mask = "22222";
         String defaultMask = "00000";
      Assert.assertEquals(false, exercise1.isMaskValid(defaultMask, mask));
 
@@ -183,7 +143,7 @@ public class Tests {
     public void testBigInput(){
          String[] args = new String[1];
          args[0] = "987654321";
-         int result = exercise1.phoneNumber(args);
+         int result = exercise1.getAllNumberCombinations(args);
          Assert.assertEquals(result, 0);
     }
 

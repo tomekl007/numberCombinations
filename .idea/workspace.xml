@@ -9,7 +9,7 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/Main.java" changelist="7270ee9a-44a4-4d8d-8cd4-767fb3f1498e" time="1382377550694" ignored="false" />
     <file path="/Tests.java" changelist="7270ee9a-44a4-4d8d-8cd4-767fb3f1498e" time="1382451737246" ignored="false" />
-    <file path="/Exercise1.java" changelist="7270ee9a-44a4-4d8d-8cd4-767fb3f1498e" time="1382455136681" ignored="false" />
+    <file path="/Exercise1.java" changelist="7270ee9a-44a4-4d8d-8cd4-767fb3f1498e" time="1382457243098" ignored="false" />
     <file path="$PROJECT_DIR$/.idea/misc.xml" changelist="7270ee9a-44a4-4d8d-8cd4-767fb3f1498e" time="1382379166932" ignored="false" />
     <file path="/fragment.java" changelist="7270ee9a-44a4-4d8d-8cd4-767fb3f1498e" time="1382390913092" ignored="false" />
     <file path="/Dummy.txt" changelist="7270ee9a-44a4-4d8d-8cd4-767fb3f1498e" time="1382451301961" ignored="false" />
@@ -66,7 +66,7 @@
       </breakpoint>
     </breakpoint_any>
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/Exercise1.java" line="175" class="Exercise1" package="">
+      <breakpoint url="file://$PROJECT_DIR$/test/Tests.java" line="60" class="Tests" package="">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -81,7 +81,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/test/Tests.java" line="87" class="Tests" package="">
+      <breakpoint url="file://$PROJECT_DIR$/test/Tests.java" line="97" class="Tests" package="">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -96,7 +96,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/Exercise1.java" line="178" class="Exercise1" package="">
+      <breakpoint url="file://$PROJECT_DIR$/test/Tests.java" line="138" class="Tests" package="">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -111,37 +111,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/test/Tests.java" line="137" class="Tests" package="">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/test/Tests.java" line="178" class="Tests" package="">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/Exercise1.java" line="112" class="Exercise1" package="">
+      <breakpoint url="file://$PROJECT_DIR$/src/Exercise1.java" line="120" class="Exercise1" package="">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -169,11 +139,20 @@
       <file leaf-file-name="Exercise1.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Exercise1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="248" column="16" selection-start="7225" selection-end="7225" vertical-scroll-proportion="0.88130563">
+            <state line="175" column="17" selection-start="5145" selection-end="5145" vertical-scroll-proportion="0.8031704">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#7289#7306#0" expanded="true" />
+                <element signature="e#5959#5976#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="javaResult.txt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/javaResult.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -208,7 +187,7 @@
       <file leaf-file-name="Tests.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/Tests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="157" column="47" selection-start="4231" selection-end="4231" vertical-scroll-proportion="0.0">
+            <state line="97" column="61" selection-start="2672" selection-end="2672" vertical-scroll-proportion="-10.48">
               <folding />
             </state>
           </provider>
@@ -462,7 +441,7 @@
     <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
   </component>
-  <component name="RunManager" selected="JUnit.Tests.testBigInput">
+  <component name="RunManager" selected="JUnit.Tests">
     <configuration default="false" name="Tests.testCorrectInput" type="JUnit" factoryName="JUnit" temporary="true">
       <module name="u2iEx1" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -529,13 +508,13 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="Tests.testSplitInput" type="JUnit" factoryName="JUnit" temporary="true">
+    <configuration default="false" name="Tests.testBigInput" type="JUnit" factoryName="JUnit" temporary="true">
       <module name="u2iEx1" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="Tests" />
-      <option name="METHOD_NAME" value="testSplitInput" />
+      <option name="METHOD_NAME" value="testBigInput" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -547,23 +526,17 @@
       </option>
       <envs />
       <patterns />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="Tests.testBigInput" type="JUnit" factoryName="JUnit" temporary="true">
+    <configuration default="false" name="Tests.testTransformArray" type="JUnit" factoryName="JUnit" temporary="true">
       <module name="u2iEx1" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="Tests" />
-      <option name="METHOD_NAME" value="testBigInput" />
+      <option name="METHOD_NAME" value="testTransformArray" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -671,16 +644,16 @@
       <item index="0" class="java.lang.String" itemvalue="JUnit.Tests.testCorrectInput" />
       <item index="1" class="java.lang.String" itemvalue="Application.Exercise1" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.Tests" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.Tests.testSplitInput" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.Tests.testBigInput" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.Tests.testBigInput" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.Tests.testTransformArray" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.Tests.testBigInput" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.Tests" />
         <item index="1" class="java.lang.String" itemvalue="JUnit.Tests.testCorrectInput" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Exercise1" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.Tests.testSplitInput" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.Tests" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.Tests.testBigInput" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.Tests.testTransformArray" />
+        <item index="4" class="java.lang.String" itemvalue="Application.Exercise1" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -717,12 +690,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-298" width="1918" height="1187" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3298969" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298969" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5351453" sideWeight="0.74358976" order="3" side_tool="false" content_ui="tabs" />
@@ -734,8 +707,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16132478" sideWeight="0.6701031" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3270853" sideWeight="0.49946582" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16132478" sideWeight="0.7478913" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25210872" sideWeight="0.49946582" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -807,16 +780,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Exercise1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="8" selection-start="3442" selection-end="3442" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#7289#7306#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="40" selection-start="388" selection-end="388" vertical-scroll-proportion="0.0">
@@ -850,7 +813,7 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7289#7306#0" expanded="true" />
+            <element signature="e#5959#5976#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -911,19 +874,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/javaResult.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/Tests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="157" column="47" selection-start="4231" selection-end="4231" vertical-scroll-proportion="0.0">
+        <state line="97" column="61" selection-start="2672" selection-end="2672" vertical-scroll-proportion="-10.48">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Exercise1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="248" column="16" selection-start="7225" selection-end="7225" vertical-scroll-proportion="0.88130563">
+        <state line="175" column="17" selection-start="5145" selection-end="5145" vertical-scroll-proportion="0.8031704">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7289#7306#0" expanded="true" />
+            <element signature="e#5959#5976#0" expanded="true" />
           </folding>
         </state>
       </provider>

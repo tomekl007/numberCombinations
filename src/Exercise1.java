@@ -59,18 +59,14 @@ public class Exercise1 {
 
     public static void main(String[] args) {
         Exercise1 exercise1 = new Exercise1();
-        exercise1.phoneNumber(args);
+        exercise1.getAllNumberCombinations(args);
 
     }
 
-    public int phoneNumber(String[] input){
+    public int getAllNumberCombinations(String[] input){
         String[] inputArray = splitInput(input[0]);
 
-        String regex = "[0-9]{9}";
-        if( ! input[0].matches(regex)){
-            System.out.println("ERROR");
-            return -1;
-        }
+        if (checkInputCorrectness(input[0])) return -1;
 
         Map<Integer, String> mapping = new LinkedHashMap<>();
 
@@ -85,28 +81,40 @@ public class Exercise1 {
             }
 
             int numberOfKeys = keys.size();
-            int i = 0;
             int counter = 0;
             String mask = "";
             while(isMaskValid(defaultStringMask, mask)){
-                mask = decToThrinity(String.valueOf(i));
+                mask = getTrinaryMask(counter);
                 String correctMask = intersectMask(mask, defaultStringMask);
 
                     mapping.put(counter, "");
                     for (int j = 0; j < numberOfKeys; j++) {
 
-                        String v = keyboard.get(keys.get(j)).get(getMaskValueForIndex(j,correctMask));
-                        String current = mapping.get(counter);
-                        current += v;
-                        mapping.put(counter, current);
+                        String oneLetterFromMask = keyboard.get(keys.get(j)).get(getMaskValueForIndex(j,correctMask));
+                        String currentKeysMap = mapping.get(counter);
+                        currentKeysMap += oneLetterFromMask;
+                        mapping.put(counter, currentKeysMap);
                     }
                 counter++;
-                i++;
-
             }
         printResult(mapping, toTransform, inputArray);
 
         return 0;
+    }
+
+    private String getTrinaryMask(int counter) {
+        String mask;
+        mask = decToTrinary(String.valueOf(counter));
+        return mask;
+    }
+
+    private boolean checkInputCorrectness(String s) {
+        String regex = "[0-9]{9}";
+        if( ! s.matches(regex)){
+            System.out.println("ERROR");
+            return true;
+        }
+        return false;
     }
 
     public void printResult(Map<Integer, String> mapping, Map<Integer,Integer> toTransform, String[] inputArray){
@@ -154,63 +162,11 @@ public class Exercise1 {
         return Character.getNumericValue(mask.charAt(index));
 
     }
-    public String IncrementStringMask(String defaultStringMask) {
-        Integer mask = Integer.parseInt(thrinityToDec(defaultStringMask));
-        mask++;
-        defaultStringMask =  decToThrinity(String.valueOf(mask));
-        return defaultStringMask;
-    }
-
-    //TODO incrementsMask, fix BigInteger issue
-    public void incrementMask(List<Integer> defaultMask) {
-        ListIterator<Integer> li = defaultMask.listIterator(defaultMask.size());
-
-        int sum = 0;
-        int j = 1;
-        while(li.hasPrevious()){
-            sum += li.previous() * j;
-            j *= 10;
-        }
-        System.out.println(sum);
-        sum+=1;
-        String result = decToThrinity(String.valueOf(sum));
-        char[] chars = result.toCharArray();
-
-        int defaultMaskLastIndex = defaultMask.size() - 1;
-        for (int i = chars.length - 1; i >= 0; i--) {
-            defaultMask.set(defaultMaskLastIndex, Character.getNumericValue(chars[i]));
-            defaultMaskLastIndex--;
-        }
-    }
-
-    public String decToThrinity(String s) {
+    public String decToTrinary(String s) {
         return new BigInteger(s).toString(3);
     }
 
-    public String thrinityToDec(String s){
-        return new BigInteger(s).toString(10);
-    }
 
-    public boolean maskIsValid(List<Integer> defaultMask) {
-        for(Integer i : defaultMask){
-            if(i == 2)
-                continue;
-            else if(i != 2)
-                return true;
-            else
-                return false;
-        }
-        return false;
-    }
-
-    public List<Integer> getDefaultMask(Map<Integer, Integer> toTransform) {
-        List<Integer> result = new LinkedList<>();
-        for (int i = 0; i < toTransform.size(); i++) {
-            result.add(0);
-        }
-        return result;
-
-    }
     public boolean isMaskValid(String defaultMask, String currentMask){
         if(defaultMask.length() != currentMask.length())
             return true;
