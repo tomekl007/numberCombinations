@@ -26,7 +26,7 @@ public class Tests {
     @Test
     public void testCorrectInput(){
         String[] args = new String[1];
-        args[0] = "110015020";
+        args[0] = "110015029";
         int result = exercise1.phoneNumber(args);
         Assert.assertEquals(result, 0);
     }
@@ -228,6 +228,20 @@ public class Tests {
         String currentMask2 = "221122111";
         String defaultMask2 = "000000000";
         Assert.assertEquals("221122111", exercise1.intersectMask(currentMask2, defaultMask2));
+    }
+
+    @Test
+    public void testSplitInput(){
+        String input = "9876543219";
+        String[] expected = new String[]{"9", "8", "7", "6", "5", "4", "3", "2", "1", "9"};
+
+        Assert.assertArrayEquals(exercise1.splitInput(input), expected);
+    }
+
+    @Test
+    public void testPrintResult(){
+        //Map<Integer, String> mapping = new Hash
+        //Map<Integer,Integer> toTransform, String[] inputArray
     }
 
 

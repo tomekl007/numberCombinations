@@ -58,43 +58,90 @@ public class Exercise1 {
 
 
     public static void main(String[] args) {
+        Exercise1 exercise1 = new Exercise1();
+        exercise1.phoneNumber(args);
 
     }
 
     public int phoneNumber(String[] input){
+        String[] inputArray = splitInput(input[0]);
+
         String regex = "[0-9]{9}";
         if( ! input[0].matches(regex)){
             System.out.println("ERROR");
             return -1;
         }
 
+        Map<Integer, String> mapping = new LinkedHashMap<>();
+
         Map<Integer,Integer> toTransform = transformArray(input[0]);
         String defaultStringMask = getStringDefaultMask(toTransform);
 
-        //Integer first = toTransform.get(5);
-        //Integer second = toTransform.get(7);
-        List<Integer> keys = new LinkedList<Integer>();
 
-        for(Integer i : toTransform.values()){
-            keys.add(i);
-        }
+            //Integer first = toTransform.get(5);
+            //Integer second = toTransform.get(7);
+            List<Integer> keys = new LinkedList<>();
 
-        int numberOfKeys = keys.size();
-        int i = 0;
-        String mask = "";
-        while(isMaskValid(defaultStringMask, mask)){
-            mask = decToThrinity(String.valueOf(i));
-            String correctMask = intersectMask(mask, defaultStringMask);
+            for(Integer i : toTransform.values()){
+                keys.add(i);
+            }
+
+            int numberOfKeys = keys.size();
+            int i = 0;
+            int counter = 0;
+            String mask = "";
+            while(isMaskValid(defaultStringMask, mask)){
+                mask = decToThrinity(String.valueOf(i));
+                String correctMask = intersectMask(mask, defaultStringMask);
+
+                    mapping.put(counter, "");
+                    for (int j = 0; j < numberOfKeys; j++) {
+
+                        String v = keyboard.get(keys.get(j)).get(getMaskValueForIndex(j,correctMask));
+                        String current = mapping.get(counter);
+                        current += v;
+                        mapping.put(counter, current);
+                    }
+                counter++;
+
+                i++;
+
+            }
+        System.out.println(mapping);
+        printResult(mapping, toTransform, inputArray);
+
+        return 0;
+    }
+
+    public void printResult(Map<Integer, String> mapping, Map<Integer,Integer> toTransform, String[] inputArray){
+        System.out.println(mapping + "  " + toTransform + " "  + inputArray);
+        for(String map : mapping.values() ){
+            String[] mapArray = splitInput(map);
+            int mappingIndex = 0;
+            for (int i = 0; i < inputArray.length ; i++) {
 
 
-                for (int j = 0; j < numberOfKeys; j++) {
-                    System.out.println(keyboard.get(keys.get(j)).get(getMaskValueForIndex(j,correctMask)));
+
+                for(Integer toTransformCur : toTransform.keySet()){
+                    if(toTransformCur.equals(i)){
+                        System.out.print(mapArray[mappingIndex]);
+                        i++;
+                        mappingIndex++;
+                    }
                 }
 
-
-            i++;
+                if(i < inputArray.length)
+                    System.out.print(inputArray[i]);
+            }
+            System.out.println();
         }
-        return 0;
+
+
+    }
+
+    public String[] splitInput(String input) {
+        return Arrays.copyOfRange(input.split(""), 1, input.length() + 1);
+
     }
 
     public String intersectMask(String mask, String defaultStringMask) {
