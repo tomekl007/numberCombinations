@@ -11,46 +11,22 @@ import java.util.*;
 public class Exercise1 {
     final Map<Integer, List<String>> keyboard = new HashMap<>();
     public Exercise1() {
-        List<String> nr2 = new LinkedList<>();
-        List<String> nr3 = new LinkedList<>();
-        List<String> nr4 = new LinkedList<>();
-        List<String> nr5 = new LinkedList<>();
-        List<String> nr6 = new LinkedList<>();
-        List<String> nr7 = new LinkedList<>();
-        List<String> nr8 = new LinkedList<>();
-        List<String> nr9 = new LinkedList<>();
-        nr2.add("A");
-        nr2.add("B");
-        nr2.add("C");
-        nr3.add("D");
-        nr3.add("E");
-        nr3.add("F");
-        nr4.add("G");
-        nr4.add("H");
-        nr4.add("I");
-        nr5.add("J");
-        nr5.add("K");
-        nr5.add("L");
-        nr6.add("M");
-        nr6.add("N");
-        nr6.add("O");
-        nr7.add("P");
-        nr7.add("R");
-        nr7.add("S");
-        nr8.add("T");
-        nr8.add("U");
-        nr8.add("V");
-        nr9.add("W");
-        nr9.add("X");
-        nr9.add("Y");
-        keyboard.put(2, nr2);
-        keyboard.put(3, nr3);
-        keyboard.put(4, nr4);
-        keyboard.put(5, nr5);
-        keyboard.put(6, nr6);
-        keyboard.put(7, nr7);
-        keyboard.put(8, nr8);
-        keyboard.put(9, nr9);
+        keyboard.put(2, getListWithValuesFromArray(new String[]{"A", "B", "C"}));
+        keyboard.put(3, getListWithValuesFromArray(new String[]{"D", "E", "F"}));
+        keyboard.put(4, getListWithValuesFromArray(new String[]{"G", "H", "I"}));
+        keyboard.put(5, getListWithValuesFromArray(new String[]{"J", "K", "L"}));
+        keyboard.put(6, getListWithValuesFromArray(new String[]{"M", "N", "O"}));
+        keyboard.put(7, getListWithValuesFromArray(new String[]{"P", "R", "S"}));
+        keyboard.put(8, getListWithValuesFromArray(new String[]{"T", "U", "V"}));
+        keyboard.put(9, getListWithValuesFromArray(new String[]{"W", "X", "Y"}));
+    }
+
+    public<T> List<T> getListWithValuesFromArray(T[] strings){
+        List<T> list = new LinkedList<>();
+        for(T current : strings){
+            list.add(current);
+        }
+        return list;
     }
 
 
