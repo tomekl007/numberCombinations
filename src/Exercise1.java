@@ -10,6 +10,7 @@ import java.util.*;
  */
 public class Exercise1 {
     final Map<Integer, List<String>> keyboard = new HashMap<>();
+    public Map<Integer, Integer> toTransform;
 
     public Exercise1() {
         List<String> nr2 = new LinkedList<>();
@@ -57,47 +58,54 @@ public class Exercise1 {
 
     public static void main(String[] args) {
         Exercise1 exercise1 = new Exercise1();
-        exercise1.getAllNumberCombinations(args);
+        if (!exercise1.checkInputCorrectness(args[0]))
+            return;
+        exercise1.findAllNumberCombinations(args);
 
     }
 
-    public int getAllNumberCombinations(String[] input){
+    public int findAllNumberCombinations(String[] input) {
         String[] inputArray = splitInput(input[0]);
 
-        if (checkInputCorrectness(input[0])) return -1;
-
         Map<Integer, String> mapping = new LinkedHashMap<>();
-
-        Map<Integer,Integer> toTransform = transformArray(input[0]);
+        Map<Integer, Integer> toTransform = transformArray(input[0]);
         String defaultStringMask = getStringDefaultMask(toTransform);
+        List<Integer> keys = getKeysToTransform(toTransform);
 
 
-            List<Integer> keys = new LinkedList<>();
+        int counter = 0;
+        String mask = "";
+        while (isMaskValid(defaultStringMask, mask)) {
+            mask = getTrinaryMask(counter);
+            String correctMask = intersectMask(mask, defaultStringMask);
 
-            for(Integer i : toTransform.values()){
-                keys.add(i);
-            }
-
-            int numberOfKeys = keys.size();
-            int counter = 0;
-            String mask = "";
-            while(isMaskValid(defaultStringMask, mask)){
-                mask = getTrinaryMask(counter);
-                String correctMask = intersectMask(mask, defaultStringMask);
-
-                    mapping.put(counter, "");
-                    for (int j = 0; j < numberOfKeys; j++) {
-
-                        String oneLetterFromMask = keyboard.get(keys.get(j)).get(getMaskValueForIndex(j,correctMask));
-                        String currentKeysMap = mapping.get(counter);
-                        currentKeysMap += oneLetterFromMask;
-                        mapping.put(counter, currentKeysMap);
-                    }
-                counter++;
-            }
+            findKeysForCurrentMask(mapping, keys, counter, correctMask);
+            counter++;
+        }
         printResult(mapping, toTransform, inputArray);
 
         return 0;
+    }
+
+    private void findKeysForCurrentMask(Map<Integer, String> mapping, List<Integer> keys, int counter, String correctMask) {
+        int numberOfKeys = keys.size();
+        mapping.put(counter, "");
+        for (int j = 0; j < numberOfKeys; j++) {
+
+            String oneLetterFromMask = keyboard.get(keys.get(j)).get(getMaskValueForIndex(j, correctMask));
+            String currentKeysMap = mapping.get(counter);
+            currentKeysMap += oneLetterFromMask;
+            mapping.put(counter, currentKeysMap);
+        }
+    }
+
+    private List<Integer> getKeysToTransform(Map<Integer, Integer> toTransform) {
+        List<Integer> keys = new LinkedList<>();
+
+        for (Integer i : toTransform.values()) {
+            keys.add(i);
+        }
+        return keys;
     }
 
     private String getTrinaryMask(int counter) {
@@ -106,38 +114,37 @@ public class Exercise1 {
         return mask;
     }
 
-    private boolean checkInputCorrectness(String s) {
+    public boolean checkInputCorrectness(String s) {
         String regex = "[0-9]{9}";
-        if( ! s.matches(regex)){
+        if (!s.matches(regex)) {
             System.out.println("ERROR");
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 
-    public void printResult(Map<Integer, String> mapping, Map<Integer,Integer> toTransform, String[] inputArray){
-        for(String map : mapping.values() ){
-            String[] mapArray = splitInput(map);
-            int mappingIndex = 0;
-            for (int i = 0; i < inputArray.length ; i++) {
-
-
-
-                for(Integer toTransformCur : toTransform.keySet()){
-                    if(toTransformCur.equals(i)){
-                        System.out.print(mapArray[mappingIndex]);
-                        i++;
-                        mappingIndex++;
-                    }
-                }
-
-                if(i < inputArray.length)
-                    System.out.print(inputArray[i]);
-            }
-            System.out.println();
+    public void printResult(Map<Integer, String> mapping, Map<Integer, Integer> toTransform, String[] inputArray) {
+        for (String map : mapping.values()) {
+            printCurrentLineWithMapping(toTransform, inputArray, map);
         }
+     }
 
+    private void printCurrentLineWithMapping(Map<Integer, Integer> toTransform, String[] inputArray, String map) {
+        String[] mapArray = splitInput(map);
+        int mappingIndex = 0;
+        for (int i = 0; i < inputArray.length; i++) {
+            for (Integer toTransformCur : toTransform.keySet()) {
+                if (toTransformCur.equals(i)) {
+                    System.out.print(mapArray[mappingIndex]);
+                    i++;
+                    mappingIndex++;
+                }
+            }
 
+            if (i < inputArray.length)
+                System.out.print(inputArray[i]);
+        }
+        System.out.println();
     }
 
     public String[] splitInput(String input) {
@@ -146,7 +153,7 @@ public class Exercise1 {
     }
 
     public String intersectMask(String mask, String defaultStringMask) {
-       int numberToFillWithZero = defaultStringMask.length() - mask.length();
+        int numberToFillWithZero = defaultStringMask.length() - mask.length();
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < numberToFillWithZero; i++) {
             stringBuilder.append("0");
@@ -156,23 +163,24 @@ public class Exercise1 {
 
     }
 
-    public int getMaskValueForIndex(int index, String mask){
+    public int getMaskValueForIndex(int index, String mask) {
         return Character.getNumericValue(mask.charAt(index));
 
     }
+
     public String decToTrinary(String s) {
         return new BigInteger(s).toString(3);
     }
 
 
-    public boolean isMaskValid(String defaultMask, String currentMask){
-        if(defaultMask.length() != currentMask.length())
+    public boolean isMaskValid(String defaultMask, String currentMask) {
+        if (defaultMask.length() != currentMask.length())
             return true;
         return isStringMaskValid(currentMask);
 
     }
 
-    public String getStringDefaultMask(Map<Integer, Integer> toTransform){
+    public String getStringDefaultMask(Map<Integer, Integer> toTransform) {
         StringBuilder buffer = new StringBuilder();
         for (int i = 0; i < toTransform.size(); i++) {
             buffer.append("0");
@@ -180,13 +188,11 @@ public class Exercise1 {
         return buffer.toString();
     }
 
-    public boolean isStringMaskValid(String mask){
-
-
+    public boolean isStringMaskValid(String mask) {
         for (int i = 0; i < mask.length(); i++) {
-            if(mask.charAt(i) == '2')
+            if (mask.charAt(i) == '2')
                 continue;
-            else if(mask.charAt(i) != '2')
+            else if (mask.charAt(i) != '2')
                 return true;
             else
                 return false;
@@ -194,21 +200,17 @@ public class Exercise1 {
         return false;
     }
 
-
-
-
-    public Map<Integer,Integer> transformArray(String number){
+    public Map<Integer, Integer> transformArray(String number) {
         char[] numberArray = number.toCharArray();
         int fromBounds = 2;
         int toBounds = 9;
-        Map<Integer,Integer> transformed = new HashMap<>();
+        Map<Integer, Integer> transformed = new HashMap<>();
 
         for (int i = 0; i < numberArray.length; i++) {
-            if(Character.getNumericValue(numberArray[i]) >= fromBounds && Character.getNumericValue(numberArray[i]) <= toBounds){
+            if (Character.getNumericValue(numberArray[i]) >= fromBounds && Character.getNumericValue(numberArray[i]) <= toBounds) {
                 transformed.put(i, Character.getNumericValue(numberArray[i]));
             }
         }
         return transformed;
-
     }
 }

@@ -19,14 +19,14 @@ public class Tests {
     public void testBadImput(){
         String[] args = new String[1];
         args[0] = "bad input";
-        int result = exercise1.getAllNumberCombinations(args);
-        Assert.assertEquals(result, -1);
+        boolean result = exercise1.checkInputCorrectness(args[0]);
+        Assert.assertEquals(result, false);
     }
     @Test
     public void testCorrectInput(){
         String[] args = new String[1];
         args[0] = "110015010";
-        int result = exercise1.getAllNumberCombinations(args);
+        int result = exercise1.findAllNumberCombinations(args);
         Assert.assertEquals(result, 0);
     }
 
@@ -137,7 +137,7 @@ public class Tests {
     public void testBigInput(){
          String[] args = new String[1];
          args[0] = "338356737";
-         int result = exercise1.getAllNumberCombinations(args);
+         int result = exercise1.findAllNumberCombinations(args);
          Assert.assertEquals(result, 0);
     }
 
