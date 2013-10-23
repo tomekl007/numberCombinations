@@ -13,7 +13,7 @@ import java.util.Map;
  * To change this template use File | Settings | File Templates.
  */
 public class Tests {
-    Exercise1 exercise1 = new Exercise1();
+    private final Exercise1 exercise1 = new Exercise1();
 
     @Test
     public void testBadImput(){

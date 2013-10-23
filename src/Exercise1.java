@@ -9,11 +9,9 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class Exercise1 {
-    Map<Integer, List<String>> keyboard = new HashMap<>();
+    final Map<Integer, List<String>> keyboard = new HashMap<>();
 
     public Exercise1() {
-        List<String> nr0 = new LinkedList<>();
-
         List<String> nr2 = new LinkedList<>();
         List<String> nr3 = new LinkedList<>();
         List<String> nr4 = new LinkedList<>();
@@ -175,7 +173,7 @@ public class Exercise1 {
     }
 
     public String getStringDefaultMask(Map<Integer, Integer> toTransform){
-        StringBuffer buffer = new StringBuffer();
+        StringBuilder buffer = new StringBuilder();
         for (int i = 0; i < toTransform.size(); i++) {
             buffer.append("0");
         }
@@ -203,7 +201,7 @@ public class Exercise1 {
         char[] numberArray = number.toCharArray();
         int fromBounds = 2;
         int toBounds = 9;
-        Map<Integer,Integer> transformed = new HashMap<Integer,Integer>();
+        Map<Integer,Integer> transformed = new HashMap<>();
 
         for (int i = 0; i < numberArray.length; i++) {
             if(Character.getNumericValue(numberArray[i]) >= fromBounds && Character.getNumericValue(numberArray[i]) <= toBounds){
