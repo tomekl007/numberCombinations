@@ -140,5 +140,25 @@ public class Tests {
          int result = exercise1.findAllNumberCombinations(args);
          Assert.assertEquals(result, 0);
     }
+    @Test
+    public void testInputShouldBeTransform(){
+        String input = "200000000";
+        boolean result = exercise1.checkInputShouldBeTransform(input);
+        Assert.assertEquals(true, result);
+    }
+
+    @Test
+    public void testInputShouldNotBeTransform(){
+        String input= "100100100";
+        boolean result = exercise1.checkInputShouldBeTransform(input);
+        Assert.assertEquals(false,result);
+    }
+
+    @Test
+    public void testInputAllZeros(){
+        String input = "000000000";
+        boolean result = exercise1.checkInputShouldBeTransform(input);
+        Assert.assertEquals(false, result);
+    }
 
 }

@@ -10,8 +10,6 @@ import java.util.*;
  */
 public class Exercise1 {
     final Map<Integer, List<String>> keyboard = new HashMap<>();
-    public Map<Integer, Integer> toTransform;
-
     public Exercise1() {
         List<String> nr2 = new LinkedList<>();
         List<String> nr3 = new LinkedList<>();
@@ -60,6 +58,9 @@ public class Exercise1 {
         Exercise1 exercise1 = new Exercise1();
         if (!exercise1.checkInputCorrectness(args[0]))
             return;
+        if(!exercise1.checkInputShouldBeTransform(args[0])){
+            return;
+        }
         exercise1.findAllNumberCombinations(args);
 
     }
@@ -118,6 +119,17 @@ public class Exercise1 {
         String regex = "[0-9]{9}";
         if (!s.matches(regex)) {
             System.out.println("ERROR");
+            return false;
+        }
+
+        return true;
+    }
+
+    public boolean checkInputShouldBeTransform(String s ){
+
+        String regex = "[0-1]{9}";
+        if(s.matches(regex)){
+            System.out.println(s);
             return false;
         }
         return true;
